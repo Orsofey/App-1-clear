@@ -57,7 +57,6 @@
     margin: 0px auto;
     max-width: 1080px;
     height: 550px;
-    border: groove 1em red;
 }
 .anime {
     color: black;
@@ -76,7 +75,7 @@
     background: #C4C4C4;
 }
 .anime__name {
-
+    color: #0000;
 }
 
 
@@ -140,17 +139,22 @@
 
 /*конкретный слайдер*/
 .slider {
-    position: relative
+    position: relative;
+    height: 500px;
 }
 .slider .slick-arrow{
     position: absolute;
     top: 50%;
     z-index: 10;
     font-size: 0;
+    width: 50px;
+    height: 50px;
 }
 .slider .slick-arrow.slick-prev {
     left: 0;
+    background: url('../img/keyboard-left-arrow-button_icon-icons.com_72692.svg') 0 0 / 100% no-repeat;  
 }
 .slider .slick-arrow.slick-next {
     right: 0;
+    background: url('../img/keyboard-right-arrow-button-1_icon-icons.com_72690.svg') 0 0 / 100% no-repeat;
 }
