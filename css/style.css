@@ -1,6 +1,5 @@
 .head {
     margin: 0px auto;
-    border: 1px solid #000;
     width: 1080px;
     height: 311px;
     background-color: white;
@@ -10,7 +9,6 @@
 .head-button {
     height: 42px;
     width: 725px;
-    border: 1px solid #000;
     display: flex;
     justify-content: space-between;
 }
@@ -34,7 +32,6 @@
     line-height: 42px;
 
     background-color: #C4C4C4;
-    border: 1px solid #000;
 
     display: flex;
     justify-content: space-between;
@@ -53,27 +50,37 @@
     line-height: 42px;
 }
 
+
+
 /*slider*/
 .slider {
     margin: 0px auto;
     max-width: 1080px;
-    border: 1px solid #000;
     height: 550px;
+    border: groove 1em red;
 }
 .anime {
     color: black;
     display: flex;
+    justify-content: space-around;
 }
-.anime__title {
+.anime__description {
     justify-content: space-around;
     font-size: 36px;
     line-height: 42px;
+
 }
 .anime__img {
-    width: 364px;
+    min-width: 292px;
     height: 448px;  
     background: #C4C4C4;
 }
+.anime__name {
+
+}
+
+
+
 
 /*Popup*/
 .popup {
@@ -128,4 +135,21 @@
 .slick-track {
     /*все элементы выстраиваются в линию*/
     display: flex;
+}
+
+
+/*конкретный слайдер*/
+.slider {
+    position: relative
+}
+.slider .slick-arrow{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+}
+.slider .slick-arrow.slick-prev {
+    left: 0;
+}
+.slider .slick-arrow.slick-next {
+    right: 0;
 }
