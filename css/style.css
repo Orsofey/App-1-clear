@@ -93,7 +93,7 @@
     opacity: 0;
     visibility: hidden;
 }
-.popup:target {
+.popup.open {
     opacity: 1;
     visibility: visible; 
 }
@@ -104,7 +104,7 @@
     min-height: 100%;
     padding: 30px 10px;
 }
-.popup__content {
+.popup.open .popup__content {
     background-color: #ffff;
     color: #000;
     min-width: 800px;
