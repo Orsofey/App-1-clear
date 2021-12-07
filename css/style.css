@@ -1,9 +1,12 @@
 .body {
     height: 2000px;
 }
+
+
+/*---------Настройка шапки---------*/
 .head {
     margin: 0px auto;
-    width: 1080px;
+    width: 980px;
     height: 311px;
     background-color: white;
     display: flex;
@@ -40,14 +43,14 @@
     justify-content: space-between;
 }
 .line {
-    width: 1080px;
+    width: 980px;
     margin: 0px auto;
     display: flex;
     justify-content: space-around;
 }
 .text__title {
     margin: 0px auto;
-    max-width: 1080px;
+    max-width: 980px;
 
     font-size: 36px;
     line-height: 42px;
@@ -55,36 +58,108 @@
 
 
 
-/*slider*/
+/*---------slider---------*/
 .slider {
     margin: 0px auto;
-    max-width: 1080px;
+    width: 980px;
     height: 550px;
 }
+/*настройка слайдера*/
+/*классы в браузере*/
+
+.slick-list {
+    /*виден только один flex element*/
+    overflow: hidden;
+}
+
+.slick-track {
+    /*все элементы выстраиваются в линию*/
+    display: flex;
+}
+
+
+/*---------конкретный слайдер---------*/
+.slider {
+    position: relative;
+    height: 500px;
+}
+.slider .slick-arrow{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    font-size: 0;
+    width: 50px;
+    height: 50px;
+}
+.slider .slick-arrow.slick-prev {
+    left: 0;
+    background: url('../img/keyboard-left-arrow-button_icon-icons.com_72692.svg') 0 0 / 100% no-repeat;  
+}
+.slider .slick-arrow.slick-next {
+    right: 0;
+    background: url('../img/keyboard-right-arrow-button-1_icon-icons.com_72690.svg') 0 0 / 100% no-repeat;
+}
+.slider .slick-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider .slick-dots li {
+    list-style: none; 
+    margin: 0px 10px;
+}
+.slider .slick-dots button {
+    font-size: 0;
+    width: 10px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.slider .slick-dots li.slick-active button{
+    background-color: #000;
+}
+
+
+/*---------Настройка контента слайдера---------*/
 .anime {
-    color: black;
     display: flex;
     justify-content: space-around;
 }
-.anime__description {
+.block {
+    width: 900px;
+    display: flex;
     justify-content: space-around;
+}
+.anime__img {
+    width: 339px;
+    height: 448px;
+}
+
+.anime__desctiption {
+    width: 525px;
+}
+.desctiption-estimation {
+    font-size: 48px;
+    line-height: 56px;
+}
+.desctiption-name {
     font-size: 36px;
     line-height: 42px;
 
+    height: 50px;
+    width: 525px;
+    padding: 0px 0px 37px 0px;
 }
-.anime__img {
-    min-width: 292px;
-    height: 448px;  
-    background: #C4C4C4;
-}
-.anime__name {
-    color: #0000;
+.data {
+    font-size: 24px;
+    line-height: 28px;
+    padding: 15px 0px 0px 0px;
 }
 
 
 
 
-/*Popup*/
+/*---------Popup---------*/
 .popup {
     position: fixed;
     width: 100%;
@@ -124,60 +199,4 @@
     font-size: 20px;
     color: #000;
     text-decoration: none;
-}
-
-/*настройка слайдера*/
-/*классы в браузере*/
-
-.slick-list {
-    /*виден только один flex element*/
-    overflow: hidden;
-}
-
-.slick-track {
-    /*все элементы выстраиваются в линию*/
-    display: flex;
-}
-
-
-/*конкретный слайдер*/
-.slider {
-    position: relative;
-    height: 500px;
-}
-.slider .slick-arrow{
-    position: absolute;
-    top: 50%;
-    z-index: 10;
-    font-size: 0;
-    width: 50px;
-    height: 50px;
-}
-.slider .slick-arrow.slick-prev {
-    left: 0;
-    background: url('../img/keyboard-left-arrow-button_icon-icons.com_72692.svg') 0 0 / 100% no-repeat;  
-}
-.slider .slick-arrow.slick-next {
-    right: 0;
-    background: url('../img/keyboard-right-arrow-button-1_icon-icons.com_72690.svg') 0 0 / 100% no-repeat;
-}
-.slider .slick-dots {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.slider .slick-dots li {
-    list-style: none; 
-    margin: 0px 10px;
-}
-.slider .slick-dots button {
-    font-size: 0;
-    width: 10px;
-    height: 15px;
-    background-color: #fff;
-    border-radius: 50%;
-}
-.slider .slick-dots li.slick-active button{
-    background-color: transparent;
-    border: 1px solid rgb(153, 32, 32);
-}
+}   
