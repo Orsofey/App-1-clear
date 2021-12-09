@@ -12,23 +12,23 @@
     <div class="wrapper">
         <div id="head" class="head lock-padding">
             <div class="head-left">
-                <img src="../img/Group 12.png">
+                <img src="../img/user-1.svg">
             </div>
             <div class="head-right">
-                <div  class="head-button">
+                <div class="head-button">
                     <a href="#popup-1" class="head-button__text popup-link" >
                         Регистрация
                     </a>
-                    <a href="#popup-2" class="popup-link">
+                    <a href="#popup-2" class="head-button__text popup-link">
                         Вход
                     </a>
                 </div>
                 <div class="head-search">
-                    <img src="../img/kisspng-magnifying-glass-computer-icons-clip-art-magnify-5aebfc37174881 1.png" alt="">
+                    <img class="img" src="../img/search-1.svg" alt="">
                     <div class="text">
                         Поиск манги или автора
                     </div>
-                    <img src="../img/kisspng-microphone-computer-icons-google-voice-search-goog-sagittarius-5ac247e4bf4a30 1.png" alt="">
+                    <img src="../img/voice -1.svg" alt="">
                 </div>
             </div>   
         </div>
@@ -182,17 +182,22 @@
         <div id="popup-1" class="popup">
             <div class="popup__body">
                 <div class="popup__content">
-                    <a href="#head" class="popup__close close-popup">X
-                    </a>
-                    <div class="popup__title">
-                        Регистрация
-                    </div>
-                    <div class="img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="popup__text">
-                        Lorem ipsum dolor sit amet.
-                    </div>
+                    <form class="form">
+                        <a href="#head" class="popup__close close-popup">X</a>
+                        <h1 class="form__title">Регистрация</h1>
+                        <!--Первое поле ввода-->
+                        <div class="form__group">
+                            <input class="form__input">
+                            <label class="form__label">Email</label>
+                        </div>
+                        <!--Второе поле ввода-->
+                        <div class="form__group">
+                            <input class="form__input">
+                            <label class="form__label">Password</label>
+                        </div>
+        
+                        <button class="form__button">Input</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -205,16 +210,16 @@
                         <h1 class="form__title">Вход</h1>
                         <!--Первое поле ввода-->
                         <div class="form__group">
-                            <input class="form__input">
+                            <input class="form__input" placeholder= "  ">
                             <label class="form__label">Email</label>
                         </div>
                         <!--Второе поле ввода-->
                         <div class="form__group">
-                            <input class="form__input">
+                            <input class="form__input" placeholder="  ">
                             <label class="form__label">Password</label>
                         </div>
         
-                        <button class="form__button"></button>
+                        <button class="form__button">Вход</button>
                     </form>
                 </div>
             </div>
