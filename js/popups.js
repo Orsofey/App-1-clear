@@ -1,73 +1,80 @@
 const popupLinks = document.querySelectorAll('.popup-link');
 const body = document.querySelector('body');
-const lockPadding = document.querySelectorAll('.lock-padding');
+const lockPadding = document.querySelectorAll(".lock-padding");
 
 let unlock = true;
 
 const timeout = 800;
 
-if (popupLinks.length > 0) {
+/*Получаем имя из id всех popup */
+if (popupLinks.length > 0) { /*Проверка на наличие объектов*/
     for (let index = 0; index < popupLinks.length; index++) {
-        const popupLink = popupLinks[index];
-        popupLink.addEventListener("click", function(e) {
-            const popupName = popupLink.getAttribute('href').replace('#', '');
+        const popupLink = popupLinks[index]; /*Получение конкретного объекта*/
+        popupLink.addEventListener("click", function (e) {/*Вешаем событие на объект*/
+            const popupName = popupLink.getAttribute("href").replace("#", "");
             const curentPopup = document.getElementById(popupName);
             popupOpen(curentPopup);
-            e.preventDefault();
+            e.preventDefault();/*Запрет работы ссылки*/
         });
     }
 }
 
 const popupCloseIcon = document.querySelectorAll('.close-popup');
-if (popupCloseIcon,length > 0) {
+if (popupCloseIcon.length > 0) { /*Проверка на наличие объектов*/
     for (let index = 0; index < popupCloseIcon.length; index++) {
-        const el = popupCloseIcon[index];
-        el.addEventListener('click', function(e) {
-            popupClose(el.closest('.popup'));
-            e.preventDefault();
+        const el = popupCloseIcon[index];/*Получение конкретного объекта*/
+        el.addEventListener('click', function (e) {/*Вешаем событие на объект*/
+            popupClose(el.closest('.popup')); /*Поиск родителя закрывающего тега*/
+            e.preventDefault(); /*Запрет работы ссылки*/
         });
     }
 }
 
+
+
 function popupOpen(curentPopup) {
-    if (curentPopup && unlock) {
+    if (curentPopup && unlock) { /*unlock для проверки возможности нажатия на кнопку открытия попапа*/
         const popupActive = document.querySelector('.popup.open');
         if (popupActive) {
             popupClose(popupActive, false);
         } else {
-            bodylock();
+            bodyLock();
         }
         curentPopup.classList.add('open');
-        curentPopup.addEventListener("click", function(e) {
-            if (!e.target.closest('.popup__content')) {
-                popupClose(e.target.closest('.popup'));
+        curentPopup.addEventListener("click", function (e) {
+            if (!e.target.closest('.popup__content')) { /*Проверяет есть ли в попапе контент*/
+                popupClose(e.target.closest('.popup'));  /*Закрывает модальное окно при условии выше*/
             }
         });
     }
 }
-
 function popupClose(popupActive, doUnlock = true) {
     if (unlock) {
         popupActive.classList.remove('open');
         if (doUnlock) {
-            bodylock();
+            bodyUnLock();
         }
     }
 }
 
-function bodyLock() {
-    const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
 
-    for (let index = 0; index < lockPadding.length; index++) {
-        const el = lockPadding[index];
-        el.style.paddingRight = lockPaddingValue;
+function bodyLock() {
+    const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px'; /*Разница между шириной всего окна и всего контента внутри, чтобы получить ширину скрола, которые будет затем скрыт*/
+    
+    if (lockPadding.length > 0) {
+        for (let index = 0; index < lockPadding.length; index++) {
+            /*Бегаем по всем объектам и добавляем ширину скролла*/
+            const el = lockPadding[index];
+            el.style.paddingRight = lockPaddingValue;
+        }
     }
-    body.style.paddingRight = lockPaddingValue;
+        
+    body.style.paddingRight = lockPaddingValue; /*Добавление padding для body*/
     body.classList.add('lock');
 
-    unlock = false;
-    setTimeout(function() {
-        unlock = true;
+    unlock = false; /*Лочим unlock*/
+    setTimeout(function () {
+        unlock = true; /*Присваиваем true, чтобы можно было нажимать*/
     }, timeout);
 }
 
@@ -79,6 +86,7 @@ function bodyUnLock() {
                 el.style.paddingRight = '0px';
             }
         }
+        
         body.style.paddingRight = '0px';
         body.classList.remove('lock');
     }, timeout);
@@ -89,31 +97,9 @@ function bodyUnLock() {
     }, timeout);
 }
 
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     if (e.which === 27) {
         const popupActive = document.querySelector('.popup.open');
         popupClose(popupActive);
     }
 });
-
-(function () {
-    if (!Element.prototype.closest) {
-        Element.prototype.closest = function (css) {
-            var node = this;
-            while (node) {
-                if (node.matches(css)) return node;
-                else node = node.parentElement;
-            }
-            return null;
-        };
-    }
-})();
-
-(function () {
-    if (!Element.prototype.matches) {
-        Element.prototype.matches = Element.prototype.matchesSelector ||
-            Element.prototype.webkitMatchesSelector ||
-            Element.prototype.mozMatchesSelector ||
-            Element.prototype.msMatchesSelector;
-    }
-})();
