@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <link href="../css/style.css" rel="stylesheet">
-    <title>App</title>
+    <title>App-1-clear</title>
 </head>
 <body>
     <div class="wrapper">
@@ -185,17 +185,19 @@
                     <form class="form">
                         <a href="#head" class="popup__close close-popup">X</a>
                         <h1 class="form__title">Регистрация</h1>
-                        <!--Первое поле ввода-->
-                        <div class="form__group">
-                            <input class="form__input">
-                            <label class="form__label">Email</label>
+                        <div class="form__input">
+                            <!--Первое поле ввода-->
+                            <div class="form__group">
+                                <input class="form__input">
+                                <label class="form__label">Email</label>
+                            </div>
+                            <!--Второе поле ввода-->
+                            <div class="form__group">
+                                <input class="form__input">
+                                <label class="form__label">Password</label>
+                            </div>
                         </div>
-                        <!--Второе поле ввода-->
-                        <div class="form__group">
-                            <input class="form__input">
-                            <label class="form__label">Password</label>
-                        </div>
-        
+
                         <button class="form__button">Input</button>
                     </form>
                 </div>
@@ -204,23 +206,34 @@
         <!--Вход-->
         <div id="popup-2" class="popup">
             <div class="popup__body">
-                <div class="popup__content">
+                <div class=" popup__content">
                     <form class="form">
-                        <a href="#head" class="popup__close close-popup">X</a>
-                        <h1 class="form__title">Вход</h1>
+                        <div class="form-head">   
+                            <div class="form__title">Вход</div>
+                            <a href="#head" class="form-head-close popup__close close-popup">
+                                <img class="form-head-close__image" src="../img/exit-1.jpg" alt="">
+                            </a> 
+                        </div>
+                                
+
                         <!--Первое поле ввода-->
                         <div class="form__group">
-                            <input class="form__input" placeholder= "  ">
-                            <label class="form__label">Email</label>
+                                <input class="form__input" placeholder= "  ">
+                                <label class="form__label">Email</label>
                         </div>
                         <!--Второе поле ввода-->
                         <div class="form__group">
-                            <input class="form__input" placeholder="  ">
-                            <label class="form__label">Password</label>
+                                <input class="form__input" placeholder="  ">
+                                <label class="form__label">Password</label>
                         </div>
-        
-                        <button class="form__button">Вход</button>
-                    </form>
+            
+                        <button class="form__button">
+                            <img src="../img/symb-1.svg" alt="">
+                            <div class="text">
+                                Войти
+                            </div> 
+                        </button>
+                    </form>         
                 </div>
             </div>
         </div>
