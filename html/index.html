@@ -181,32 +181,63 @@
         </div>
         <div id="popup-1" class="popup">
             <div class="popup__body">
-                <div class="popup__content">
+                <div class="popup__content popup__content-1">
                     <form class="form">
-                        <a href="#head" class="popup__close close-popup">X</a>
-                        <h1 class="form__title">Регистрация</h1>
-                        <div class="form__input">
-                            <!--Первое поле ввода-->
-                            <div class="form__group">
-                                <input class="form__input">
+                        <div class="form-head">   
+                            <div class="form__title">Регистрация</div>
+                            <a href="#head" class="form-head-close popup__close close-popup">
+                                <img class="form-head-close__image" src="../img/exit-1.jpg" alt="">
+                            </a> 
+                        </div>
+                                
+
+                        <!--Первое поле ввода-->
+                        <div class="form__group">
+                                <input class="form__input" placeholder= "  ">
                                 <label class="form__label">Email</label>
-                            </div>
-                            <!--Второе поле ввода-->
-                            <div class="form__group">
-                                <input class="form__input">
+                        </div>
+                        <div class="form__group">
+                            <input class="form__input" placeholder="  ">
+                            <label class="form__label">Имя</label>
+                        </div>
+                        <div class="form__group">
+                            <input class="form__input" placeholder="  ">
+                            <label class="form__label">Дата рождения</label>
+                        </div>
+                        <!--Второе поле ввода-->
+                        <div class="form__group">
+                                <input class="form__input" placeholder="  ">
                                 <label class="form__label">Password</label>
-                            </div>
                         </div>
 
-                        <button class="form__button">Input</button>
-                    </form>
+
+                        <form action="#" class="block-form">
+                            <div class="block-form__input">
+                                <div class="checkbox">
+                                    Я согласен с политикой конфидециальности
+                                    <input type="checkbox" checked name="namecheckbox_1">
+                                </div>
+                            </div>
+                            <div class="block-form__input">
+                                <div class="checkbox">
+                                    Я согласен на рассылку материалов по почте
+                                    <input type="checkbox" name="namecheckbox_2">
+                                </div>
+                            </div>
+                        </form>
+                        <button class="form__button button-1">
+                            <div class="text">
+                                Регистрация
+                            </div> 
+                        </button>
+                    </form>         
                 </div>
             </div>
         </div>
         <!--Вход-->
-        <div id="popup-2" class="popup">
+        <div id="popup-2" class="popup popup-input">
             <div class="popup__body">
-                <div class=" popup__content">
+                <div class=" popup__content popup__content-2">
                     <form class="form">
                         <div class="form-head">   
                             <div class="form__title">Вход</div>
@@ -227,7 +258,7 @@
                                 <label class="form__label">Password</label>
                         </div>
             
-                        <button class="form__button">
+                        <button class="form__button button-2">
                             <img src="../img/symb-1.svg" alt="">
                             <div class="text">
                                 Войти
