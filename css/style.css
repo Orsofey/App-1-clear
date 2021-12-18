@@ -56,12 +56,16 @@ body {
     width: 76px;
     height: 72px;
 }
+
+/*Разграничение*/
 .line {
     width: 980px;
     margin: 0px auto;
     display: flex;
     justify-content: space-around;
 }
+
+/*Обозначение*/
 .text__title {
     margin: 0px auto;
     max-width: 980px;
@@ -145,8 +149,9 @@ body {
     justify-content: space-around;
 }
 .anime__img {
-    width: 339px;
-    height: 448px;
+    /* 318 X 434 */
+    width: 318px;
+    height: 434px;
 }
 
 .anime__desctiption {
