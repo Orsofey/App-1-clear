@@ -80,6 +80,7 @@ body {
 
 /*---------slider---------*/
 .slider {
+    background-color: #C4C4C4;
     margin: 0px auto;
     width: 980px;
     height: 550px;
@@ -99,7 +100,7 @@ body {
 
 
 /*---------конкретный слайдер---------*/
-.slider-spec, .slider-reg {
+.slider-spec, .slider-reg, .slider-popular {
     position: relative;
     height: 500px;
 }
@@ -146,6 +147,7 @@ body {
     justify-content: space-around;
 }
 .block {
+    padding: 20px 0px 0px 0px;
     width: 900px;
     display: flex;
     justify-content: space-around;
