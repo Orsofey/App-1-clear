@@ -63,12 +63,14 @@ body {
     margin: 0px auto;
     display: flex;
     justify-content: space-around;
+    
 }
 
 /*Обозначение*/
 .text__title {
     margin: 0px auto;
     max-width: 980px;
+    padding: 150px 0px 20px 0;
 
     font-size: 36px;
     line-height: 42px;
@@ -97,7 +99,7 @@ body {
 
 
 /*---------конкретный слайдер---------*/
-.slider {
+.slider-spec, .slider-reg {
     position: relative;
     height: 500px;
 }
